@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonopolyAR", "Assembly-CSharp.csproj", "{DBE1883B-3B61-F55E-3D10-7C566067415B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonopolyAR", "Assembly-CSharp-Editor.csproj", "{68FBD778-B538-3011-1689-3FAA7A200D95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBE1883B-3B61-F55E-3D10-7C566067415B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE1883B-3B61-F55E-3D10-7C566067415B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE1883B-3B61-F55E-3D10-7C566067415B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE1883B-3B61-F55E-3D10-7C566067415B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FBD778-B538-3011-1689-3FAA7A200D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FBD778-B538-3011-1689-3FAA7A200D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FBD778-B538-3011-1689-3FAA7A200D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FBD778-B538-3011-1689-3FAA7A200D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
