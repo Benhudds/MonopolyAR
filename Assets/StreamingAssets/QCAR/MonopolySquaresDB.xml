@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="go" size="50.000000 49.782608" />
+    <ImageTarget name="go" size="50.000000 50.000000" />
     <ImageTarget name="freeParking" size="50.000000 50.000000" />
-    <ImageTarget name="goToJail" size="50.000000 49.888889" />
-    <ImageTarget name="jail" size="50.000000 48.632812" />
+    <ImageTarget name="goToJail" size="50.000000 50.000000" />
+    <ImageTarget name="jail" size="50.000000 50.000000" />
 	<MultiTarget name="MonopolyBoard">
       <Part name="go" translation="0 0 0" rotation="AD: 0 0 1 -90"/>
-      <Part name="freeParking" translation="270 270 00" rotation="AD: 0 0 1 90"/>
-      <Part name="goToJail" translation="270 0 0" rotation="AD: 0 0 1 90"/>
-      <Part name="jail" translation="0 270 0" rotation="AD: 0 0 1 -90"/>
+      <Part name="freeParking" translation="320 320 00" rotation="AD: 0 0 1 90"/>
+      <Part name="goToJail" translation="320 0 0" rotation="AD: 0 0 1 90"/>
+      <Part name="jail" translation="0 320 0" rotation="AD: 0 0 1 -90"/>
     </MultiTarget>
   </Tracking>
 </QCARConfig>

@@ -471,8 +471,8 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Build: 1
-    Collab: 1
+    Build: 0
+    Collab: 0
     UNet: 1
   cloudProjectId: 0f8a05d1-6dc0-437c-92c2-771cf54418ee
   projectName: MonopolyAR
