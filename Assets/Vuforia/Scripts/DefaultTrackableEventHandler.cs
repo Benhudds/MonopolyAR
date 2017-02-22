@@ -74,7 +74,7 @@ namespace Vuforia
             // Enable rendering:
             foreach (Renderer component in rendererComponents)
             {
-                component.enabled = true;
+                component.enabled = false;
             }
 
             // Enable colliders:
@@ -95,6 +95,7 @@ namespace Vuforia
             // Disable rendering:
             foreach (Renderer component in rendererComponents)
             {
+                component.material.color = Color.red;
                 component.enabled = false;
             }
 
