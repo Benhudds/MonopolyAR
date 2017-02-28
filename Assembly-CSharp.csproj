@@ -47,7 +47,19 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BensHighligher.cs" />
-     <Compile Include="Assets\RenderScript.cs" />
+     <Compile Include="Assets\LoadSceneOnClick.cs" />
+     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
+     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\Scripts\DragMe.cs" />
+     <Compile Include="Assets\Scripts\DragPanel.cs" />
+     <Compile Include="Assets\Scripts\DropMe.cs" />
+     <Compile Include="Assets\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Scripts\ResizePanel.cs" />
+     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
+     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
+     <Compile Include="Assets\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Settings.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -88,8 +100,10 @@
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+     <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
+     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />

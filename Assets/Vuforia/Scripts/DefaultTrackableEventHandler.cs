@@ -95,7 +95,7 @@ namespace Vuforia
             // Disable rendering:
             foreach (Renderer component in rendererComponents)
             {
-                component.material.color = Color.red;
+                component.material.color = Color.yellow;
                 component.enabled = false;
             }
 
