@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BensHighligher : MonoBehaviour
 {
+    public LayerMask lPhysicsMask;
     private readonly List<Renderer> tHighlighted = new List<Renderer>();
     private const float timer = 9;
     private float timeLeft = timer;
@@ -25,7 +26,7 @@ public class BensHighligher : MonoBehaviour
 	    if (Settings.GazeTracking)
 	    {
 	        GazeTracking();
-	    };
+	    }
 	}
 
     private void TouchTracking()
@@ -37,11 +38,9 @@ public class BensHighligher : MonoBehaviour
                 // Construct a ray from the current touch coordinates
                 var ray = Camera.main.ScreenPointToRay(touch.position);
                 RaycastHit rhit;
-                if (Physics.Raycast(ray, out rhit, 1000) && rhit.transform.name == "SquareBase")
+                if (Physics.Raycast(ray, out rhit, lPhysicsMask, 1000))
                 {
-                    foreach (
-                var childRenderer in
-                rhit.transform.GetComponentsInChildren<MeshRenderer>().Where(mr => mr.name != "SquareBase"))
+                    foreach (var childRenderer in rhit.transform.GetComponentsInChildren<MeshRenderer>())
                     {
                         childRenderer.enabled = !childRenderer.enabled;
                     }
@@ -55,8 +54,7 @@ public class BensHighligher : MonoBehaviour
         tHighlighted.ForEach(t => t.enabled = false);
 
         RaycastHit rhit;
-        if (Physics.Raycast(new Ray(transform.position, transform.forward), out rhit, 1000) &&
-            rhit.transform.name == "SquareBase")
+        if (Physics.Raycast(new Ray(transform.position, transform.forward), out rhit, lPhysicsMask, 1000))
         {
 
             if (hitId != rhit.transform.GetInstanceID())
@@ -66,9 +64,7 @@ public class BensHighligher : MonoBehaviour
                 hitId = rhit.transform.GetInstanceID();
             }
 
-            foreach (
-                var childRenderer in
-                rhit.transform.GetComponentsInChildren<MeshRenderer>().Where(mr => mr.name != "SquareBase"))
+            foreach (var childRenderer in rhit.transform.GetComponentsInChildren<MeshRenderer>())
             {
 
                 childRenderer.enabled = true;

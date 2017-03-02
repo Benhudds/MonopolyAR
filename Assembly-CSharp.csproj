@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BensHighligher.cs" />
+     <Compile Include="Assets\DebugInfo.cs" />
      <Compile Include="Assets\LoadSceneOnClick.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
