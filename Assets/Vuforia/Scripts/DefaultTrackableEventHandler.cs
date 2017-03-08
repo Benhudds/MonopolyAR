@@ -4,6 +4,8 @@ All Rights Reserved.
 Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Vuforia
@@ -17,7 +19,11 @@ namespace Vuforia
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
+
+        public static string TrackableNote;
     
+        private readonly List<string> notesList = new List<string>() {"one", "five", "ten", "twenty", "fifty", "onehundred", "fivehundred"};
+
         #endregion // PRIVATE_MEMBER_VARIABLES
 
 
@@ -84,6 +90,13 @@ namespace Vuforia
             }
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+
+            if (notesList.Any(n => n.Equals(mTrackableBehaviour.TrackableName)))
+            {
+                CanvasVis.Show();
+
+                TrackableNote = mTrackableBehaviour.TrackableName;
+            }
         }
 
 
@@ -106,6 +119,10 @@ namespace Vuforia
             }
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
+            
+            CanvasVis.Hide();
+
+            TrackableNote = string.Empty;
         }
 
         #endregion // PRIVATE_METHODS
