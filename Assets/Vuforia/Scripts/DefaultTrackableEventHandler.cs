@@ -37,6 +37,11 @@ namespace Vuforia
             {
                 mTrackableBehaviour.RegisterTrackableEventHandler(this);
             }
+
+            if (!Settings.BalanceCounting)
+            {
+                notesList.Clear();
+            }
         }
 
         #endregion // UNTIY_MONOBEHAVIOUR_METHODS

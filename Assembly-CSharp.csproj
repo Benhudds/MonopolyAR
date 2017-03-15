@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AddBtn.cs" />
+     <Compile Include="Assets\AndroidTTS.cs" />
      <Compile Include="Assets\BensHighligher.cs" />
      <Compile Include="Assets\CanvasVis.cs" />
      <Compile Include="Assets\DebugInfo.cs" />
@@ -64,6 +65,8 @@
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Settings.cs" />
+     <Compile Include="Assets\TTS.cs" />
+     <Compile Include="Assets\TTSInterface.cs" />
      <Compile Include="Assets\Vuforia\Prefabs\BtnScript.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />

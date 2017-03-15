@@ -472,7 +472,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Build: 0
-    Collab: 0
+    Collab: 1
     UNet: 1
   cloudProjectId: 0f8a05d1-6dc0-437c-92c2-771cf54418ee
   projectName: MonopolyAR
