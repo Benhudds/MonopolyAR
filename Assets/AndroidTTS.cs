@@ -8,11 +8,9 @@ public class AndroidTTS : ITTSInterface
 
     public AndroidTTS()
     {
-#if UNITY_ANDROID
         AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject context = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
         tts = new AndroidJavaObject("com.example.ttslib.TTS", context);
-#endif 
     }
 
     public void Speak(string str)

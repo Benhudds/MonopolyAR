@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 532577965}
   - component: {fileID: 532577964}
   - component: {fileID: 532577963}
+  - component: {fileID: 532577968}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1081,6 +1082,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &532577968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532577962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c27b4825fb7a2c4782ffe1116af8c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patterns:
+  - patternColor: {r: 0.7411765, g: 0.21960784, b: 0.21960784, a: 1}
+    range: 0.8
+    hueRange: 0.5
+    highlightType: 0
+    patternTexture: {fileID: 2800000, guid: 6eac892f696199b4085a2ae6df448794, type: 3}
+    autoTiling: 1
+    tiling: {x: 0, y: 0}
+    tilingShift: {x: 0, y: 0}
+    strength: 0.27
+    edgeSharpness: 1
 --- !u!1 &537582504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +2053,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1083689634}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.7537365
+  m_Size: 0.61960155
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3143,7 +3166,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 861995517}
   m_HandleRect: {fileID: 861995516}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

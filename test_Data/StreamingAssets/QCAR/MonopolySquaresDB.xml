@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="fivehundred" size="70.000000 139.548386" />
+    <ImageTarget name="twenty" size="70.000000 137.902206" />
+    <ImageTarget name="fifty" size="70.000000 134.276733" />
+    <ImageTarget name="onehundred" size="70.000000 140.676331" />
+    <ImageTarget name="one" size="70.000000 140.229126" />
+    <ImageTarget name="five" size="70.000000 141.818176" />
+    <ImageTarget name="ten" size="70.000000 135.375381" />
+    <ImageTarget name="stones" size="270.000000 270.000000" />
+    <ImageTarget name="qr" size="270.000000 270.000000" />
+    <ImageTarget name="monoCentre" size="270.000000 271.438080" />
+    <ImageTarget name="go" size="50.000000 49.782608" />
+    <ImageTarget name="freeParking" size="50.000000 50.000000" />
+    <ImageTarget name="goToJail" size="50.000000 49.888889" />
+    <ImageTarget name="jail" size="50.000000 48.632812" />
+	<MultiTarget name="MonopolyBoard">
+      <Part name="stones" translation="0 0 0" rotation="AD: 0 0 1 -90"/>
+    </MultiTarget>
+  </Tracking>
+</QCARConfig>

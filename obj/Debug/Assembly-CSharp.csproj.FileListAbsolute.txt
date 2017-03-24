@@ -1,7 +1,5 @@
 C:\Users\Public\Documents\Unity Projects\MonopolyAR\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\Public\Documents\Unity Projects\MonopolyAR\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\Users\Public\Documents\Unity Projects\MonopolyAR\Temp\bin\Debug\Assembly-CSharp.dll.CodeAnalysisLog.xml
-C:\Users\Public\Documents\Unity Projects\MonopolyAR\Temp\bin\Debug\Assembly-CSharp.dll.lastcodeanalysissucceeded
 C:\Users\Public\Documents\Unity Projects\MonopolyAR\Temp\bin\Debug\UnityEditor.dll
 C:\Users\Public\Documents\Unity Projects\MonopolyAR\Temp\bin\Debug\UnityEngine.Analytics.dll
 C:\Users\Public\Documents\Unity Projects\MonopolyAR\Temp\bin\Debug\UnityEngine.dll

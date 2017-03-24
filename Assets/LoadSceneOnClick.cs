@@ -8,7 +8,7 @@ public class LoadSceneOnClick : MonoBehaviour
 {
     public void LoadByIndex(int sceneIndex)
     {
-        Settings.TTSM.Speak("Let's play boys");
+        Settings.TTSM.Speak("It's Show Time");
         SceneManager.LoadScene(sceneIndex);
     }
 }

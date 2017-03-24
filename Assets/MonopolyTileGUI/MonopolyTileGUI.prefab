@@ -1,0 +1,428 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1664850655214682}
+  m_IsPrefabParent: 1
+--- !u!1 &1664850655214682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224449855047420704}
+  - component: {fileID: 223530329819788320}
+  - component: {fileID: 114202764041482412}
+  - component: {fileID: 114862727974933166}
+  - component: {fileID: 114724784461257450}
+  m_Layer: 5
+  m_Name: MonopolyTileGUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114202764041482412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664850655214682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 2
+  m_ReferencePixelsPerUnit: 40
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!114 &114724784461257450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664850655214682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965dbf09948403d4ea31cf7cfecfd6a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bLoadData: 0
+  sDirectorytoDataFiles: 453a5c4d6f6e6f706f6c79204361726473
+  TilesProperties:
+  - sName: 4f6c642052656e7420526f6164
+    sTileType: 42726f776e
+    iRent: 2
+    iRent1House: 10
+    iRent2House: 30
+    iRent3House: 90
+    iRent4House: 160
+    iRentHotel: 250
+    iMortgage: 50
+    iHouseCost: 30
+    iHotelCost: 30
+  - sName: 576869746563686170656c20526f6164
+    sTileType: 42726f776e
+    iRent: 4
+    iRent1House: 20
+    iRent2House: 60
+    iRent3House: 180
+    iRent4House: 360
+    iRentHotel: 450
+    iMortgage: 50
+    iHouseCost: 30
+    iHotelCost: 30
+  - sName: 5061726b204c616e65
+    sTileType: 4461726b426c7565
+    iRent: 35
+    iRent1House: 175
+    iRent2House: 500
+    iRent3House: 1100
+    iRent4House: 1300
+    iRentHotel: 1500
+    iMortgage: 175
+    iHouseCost: 200
+    iHotelCost: 200
+  - sName: 4d617966616972
+    sTileType: 4461726b426c7565
+    iRent: 50
+    iRent1House: 200
+    iRent2House: 600
+    iRent3House: 1400
+    iRent4House: 1700
+    iRentHotel: 2000
+    iMortgage: 200
+    iHouseCost: 200
+    iHotelCost: 200
+  - sName: 526567656e7420537472656574
+    sTileType: 477265656e
+    iRent: 26
+    iRent1House: 130
+    iRent2House: 390
+    iRent3House: 900
+    iRent4House: 1100
+    iRentHotel: 1275
+    iMortgage: 200
+    iHouseCost: 150
+    iHotelCost: 150
+  - sName: 4f78666f726420537472656574
+    sTileType: 477265656e
+    iRent: 26
+    iRent1House: 130
+    iRent2House: 390
+    iRent3House: 900
+    iRent4House: 1100
+    iRentHotel: 1275
+    iMortgage: 200
+    iHouseCost: 150
+    iHotelCost: 150
+  - sName: 426f6e6420537472656574
+    sTileType: 477265656e
+    iRent: 28
+    iRent1House: 450
+    iRent2House: 1000
+    iRent3House: 1200
+    iRent4House: 1400
+    iRentHotel: 200
+    iMortgage: 160
+    iHouseCost: 160
+    iHotelCost: 0
+  - sName: 54686520416e67656c2049736c696e67746f6e
+    sTileType: 4c69676874426c7565
+    iRent: 6
+    iRent1House: 30
+    iRent2House: 90
+    iRent3House: 270
+    iRent4House: 400
+    iRentHotel: 550
+    iMortgage: 50
+    iHouseCost: 50
+    iHotelCost: 50
+  - sName: 457573746f6e20526f6164
+    sTileType: 4c69676874426c7565
+    iRent: 6
+    iRent1House: 30
+    iRent2House: 90
+    iRent3House: 270
+    iRent4House: 400
+    iRentHotel: 550
+    iMortgage: 50
+    iHouseCost: 50
+    iHotelCost: 50
+  - sName: 50656e746f6e76696c6c6520526f6164
+    sTileType: 4c69676874426c7565
+    iRent: 8
+    iRent1House: 40
+    iRent2House: 100
+    iRent3House: 300
+    iRent4House: 450
+    iRentHotel: 600
+    iMortgage: 60
+    iHouseCost: 50
+    iHotelCost: 50
+  - sName: 426f7720537472656574
+    sTileType: 4f72616e6765
+    iRent: 14
+    iRent1House: 70
+    iRent2House: 200
+    iRent3House: 550
+    iRent4House: 750
+    iRentHotel: 950
+    iMortgage: 90
+    iHouseCost: 100
+    iHotelCost: 100
+  - sName: 4d61726c626f726f75676820537472656574
+    sTileType: 4f72616e6765
+    iRent: 14
+    iRent1House: 70
+    iRent2House: 200
+    iRent3House: 550
+    iRent4House: 750
+    iRentHotel: 950
+    iMortgage: 90
+    iHouseCost: 100
+    iHotelCost: 100
+  - sName: 56696e6520537472656574
+    sTileType: 4f72616e6765
+    iRent: 16
+    iRent1House: 80
+    iRent2House: 220
+    iRent3House: 600
+    iRent4House: 800
+    iRentHotel: 1000
+    iMortgage: 100
+    iHouseCost: 100
+    iHotelCost: 100
+  - sName: 50616c6c204d616c6c
+    sTileType: 50696e6b
+    iRent: 10
+    iRent1House: 50
+    iRent2House: 150
+    iRent3House: 450
+    iRent4House: 625
+    iRentHotel: 750
+    iMortgage: 70
+    iHouseCost: 100
+    iHotelCost: 100
+  - sName: 576869746568616c6c
+    sTileType: 50696e6b
+    iRent: 10
+    iRent1House: 50
+    iRent2House: 150
+    iRent3House: 450
+    iRent4House: 625
+    iRentHotel: 750
+    iMortgage: 70
+    iHouseCost: 100
+    iHotelCost: 100
+  - sName: 4e6f727468756d6265726c616e64204176656e7565
+    sTileType: 50696e6b
+    iRent: 12
+    iRent1House: 60
+    iRent2House: 180
+    iRent3House: 500
+    iRent4House: 700
+    iRentHotel: 900
+    iMortgage: 80
+    iHouseCost: 100
+    iHotelCost: 100
+  - sName: 537472616e64
+    sTileType: 526564
+    iRent: 18
+    iRent1House: 90
+    iRent2House: 250
+    iRent3House: 700
+    iRent4House: 875
+    iRentHotel: 1050
+    iMortgage: 110
+    iHouseCost: 150
+    iHotelCost: 150
+  - sName: 466c65657420537472656574
+    sTileType: 526564
+    iRent: 18
+    iRent1House: 90
+    iRent2House: 250
+    iRent3House: 700
+    iRent4House: 875
+    iRentHotel: 1050
+    iMortgage: 110
+    iHouseCost: 150
+    iHotelCost: 150
+  - sName: 54726166616c67617220537175617265
+    sTileType: 526564
+    iRent: 20
+    iRent1House: 100
+    iRent2House: 300
+    iRent3House: 750
+    iRent4House: 925
+    iRentHotel: 1100
+    iMortgage: 120
+    iHouseCost: 150
+    iHotelCost: 150
+  - sName: 4b696e6727732043726f73732053746174696f6e
+    sTileType: 53746174696f6e
+    iRent: 25
+    iRent1House: 50
+    iRent2House: 100
+    iRent3House: 200
+    iRent4House: 100
+    iRentHotel: 0
+    iMortgage: 0
+    iHouseCost: 0
+    iHotelCost: 0
+  - sName: 4d6172796c65626f6e652053746174696f6e
+    sTileType: 53746174696f6e
+    iRent: 25
+    iRent1House: 50
+    iRent2House: 100
+    iRent3House: 200
+    iRent4House: 100
+    iRentHotel: 0
+    iMortgage: 0
+    iHouseCost: 0
+    iHotelCost: 0
+  - sName: 46656e636875726368205374726565742053746174696f6e
+    sTileType: 53746174696f6e
+    iRent: 25
+    iRent1House: 50
+    iRent2House: 100
+    iRent3House: 200
+    iRent4House: 100
+    iRentHotel: 0
+    iMortgage: 0
+    iHouseCost: 0
+    iHotelCost: 0
+  - sName: 4c69766572706f6f6c205374726565742053746174696f6e
+    sTileType: 53746174696f6e
+    iRent: 25
+    iRent1House: 50
+    iRent2House: 100
+    iRent3House: 200
+    iRent4House: 100
+    iRentHotel: 0
+    iMortgage: 0
+    iHouseCost: 0
+    iHotelCost: 0
+  - sName: 456c65637472696320436f6d70616e79
+    sTileType: 5574696c697479
+    iRent: 0
+    iRent1House: 0
+    iRent2House: 75
+    iRent3House: 0
+    iRent4House: 0
+    iRentHotel: 0
+    iMortgage: 0
+    iHouseCost: 0
+    iHotelCost: 0
+  - sName: 576174657220576f726b73
+    sTileType: 5574696c697479
+    iRent: 0
+    iRent1House: 0
+    iRent2House: 75
+    iRent3House: 0
+    iRent4House: 0
+    iRentHotel: 0
+    iMortgage: 0
+    iHouseCost: 0
+    iHotelCost: 0
+  - sName: 4c656963657374657220537175617265
+    sTileType: 59656c6c6f77
+    iRent: 22
+    iRent1House: 110
+    iRent2House: 330
+    iRent3House: 800
+    iRent4House: 975
+    iRentHotel: 1150
+    iMortgage: 150
+    iHouseCost: 150
+    iHotelCost: 150
+  - sName: 436f76656e74727920537472656574
+    sTileType: 59656c6c6f77
+    iRent: 22
+    iRent1House: 110
+    iRent2House: 330
+    iRent3House: 800
+    iRent4House: 975
+    iRentHotel: 1150
+    iMortgage: 150
+    iHouseCost: 150
+    iHotelCost: 150
+  - sName: 506963636164696c6c79
+    sTileType: 59656c6c6f77
+    iRent: 22
+    iRent1House: 120
+    iRent2House: 360
+    iRent3House: 850
+    iRent4House: 1025
+    iRentHotel: 1200
+    iMortgage: 150
+    iHouseCost: 140
+    iHotelCost: 140
+--- !u!114 &114862727974933166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664850655214682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &223530329819788320
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664850655214682}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 1
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &224449855047420704
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664850655214682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}

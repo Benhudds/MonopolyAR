@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -25,6 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -41,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 9
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -53,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 4
+    serializedVersion: 8
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -66,13 +67,27 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_DirectLightInLightProbes: 1
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
+    m_MixedBakeMode: 1
+    m_BakeBackend: 0
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 500
+    m_PVRBounces: 2
+    m_PVRFiltering: 0
+    m_PVRFilteringMode: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_RuntimeCPUUsage: 25
+  m_ShadowMaskMode: 2
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -89,6 +104,8 @@ NavMeshSettings:
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
 --- !u!4 &545642 stripped
@@ -292,7 +309,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_Mesh
@@ -436,6 +453,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -551,7 +578,7 @@ Canvas:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133421648}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -560,6 +587,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -569,26 +597,24 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: onehundredMaterial
+  m_Name: tenMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - first:
-        name: _Color
-      second: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &161082822 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1998806595011828, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
@@ -722,6 +748,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -767,6 +803,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b77994249b4d51478f527c5fc7472ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &238964594
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -964.49994
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -474
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134950518246180, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114721768011484198, guid: 2b5b1fc028436604a93cd2f3402a0082,
+        type: 2}
+      propertyPath: bScreenspaceTileHovered
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2b5b1fc028436604a93cd2f3402a0082, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &238964595 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1314352038126606, guid: 2b5b1fc028436604a93cd2f3402a0082,
+    type: 2}
+  m_PrefabInternal: {fileID: 238964594}
 --- !u!1001 &241379277
 Prefab:
   m_ObjectHideFlags: 0
@@ -854,6 +1000,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -995,6 +1151,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1089,6 +1255,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1115,7 +1291,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323663802}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -1140,6 +1316,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &323663804
@@ -1153,7 +1331,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &427259225 stripped
 Transform:
@@ -1261,6 +1439,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1360,6 +1548,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1454,6 +1652,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1564,6 +1772,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1604,7 +1822,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_Mesh
@@ -1748,6 +1966,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1836,6 +2064,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!4 &617845489 stripped
 Transform:
@@ -1933,6 +2162,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2096,6 +2335,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2346,6 +2595,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2359,22 +2618,2405 @@ Material:
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: -1, y: -1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - first:
-        name: _Color
-      second: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+--- !u!1001 &893121636
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.size
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449855047420704, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: sDirectorytoDataFiles
+      value: C:\Users\Public\Documents\Unity Projects\MonopolyAR\Assets\Tiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: bLoadData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[0].sName
+      value: Old Rent Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[0].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].sName
+      value: Community Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].sName
+      value: Whitechapel Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iRent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iRent1House
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iRent2House
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iRent3House
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iRent4House
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iRentHotel
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iMortgage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iHouseCost
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iHotelCost
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].sName
+      value: Income Tax
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].sName
+      value: King's Cross Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].sName
+      value: The Angel Islington
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iRent
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iRent1House
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iRent2House
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iRent3House
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iRent4House
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iRentHotel
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iMortgage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iHouseCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iHotelCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].sName
+      value: Chance
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].sName
+      value: Euston Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iRent
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iRent1House
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iRent2House
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iRent3House
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iRent4House
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iRentHotel
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iMortgage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iHouseCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iHotelCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].sName
+      value: Pentonville Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iRent
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iRent1House
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iRent2House
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iRent3House
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iRent4House
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iRentHotel
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iMortgage
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iHouseCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iHotelCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].sName
+      value: Pall Mall
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iRent
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iRent1House
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iRent2House
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iRent3House
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iRent4House
+      value: 625
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iRentHotel
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iMortgage
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iHouseCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iHotelCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].sName
+      value: Electric Company
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].sName
+      value: Whitehall
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iRent
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iRent1House
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iRent2House
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iRent3House
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iRent4House
+      value: 625
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iRentHotel
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iMortgage
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iHouseCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iHotelCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].sName
+      value: Northumberland Avenue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iRent
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iRent1House
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iRent2House
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iRent3House
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iRent4House
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iRentHotel
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iMortgage
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iHouseCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iHotelCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].sName
+      value: Marylebone Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].sName
+      value: Bow Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iRent
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iRent1House
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iRent2House
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iRent3House
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iRent4House
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iRentHotel
+      value: 950
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iMortgage
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iHouseCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iHotelCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].sName
+      value: Community Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].sName
+      value: Marlborough Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iRent
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iRent1House
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iRent2House
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iRent3House
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iRent4House
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iRentHotel
+      value: 950
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iMortgage
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iHouseCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iHotelCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].sName
+      value: Vine Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iRent
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iRent1House
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iRent2House
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iRent3House
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iRent4House
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iRentHotel
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iMortgage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].sName
+      value: Strand
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iRent
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iRent1House
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iRent2House
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iRent3House
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iRent4House
+      value: 875
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iRentHotel
+      value: 1050
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iMortgage
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].sName
+      value: Chance
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].sName
+      value: Fleet Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iRent
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iRent1House
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iRent2House
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iRent3House
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iRent4House
+      value: 875
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iRentHotel
+      value: 1050
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iMortgage
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iHouseCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iHotelCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].sName
+      value: Trafalgar Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].sTileType
+      value: Properties.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iRent
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iRent1House
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iRent2House
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iRent3House
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iRent4House
+      value: 925
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iRentHotel
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iMortgage
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iHouseCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iHotelCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].sName
+      value: Fenchurch Street Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].sName
+      value: Leicester Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iRent2House
+      value: 330
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].sName
+      value: Coventry Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iRent2House
+      value: 330
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].sName
+      value: Water Works
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].sName
+      value: Piccadilly
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].sTileType
+      value: Utility
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iRent
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iRent1House
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iRent2House
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iRent3House
+      value: 850
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iRent4House
+      value: 1025
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iRentHotel
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iMortgage
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iHouseCost
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iHotelCost
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].sName
+      value: Regent Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].sTileType
+      value: Utility
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iRent
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iRent1House
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iRent2House
+      value: 390
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iRent3House
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iRent4House
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iRentHotel
+      value: 1275
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iMortgage
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iHouseCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iHotelCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].sName
+      value: Oxford Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].sTileType
+      value: Properties.txt.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].sName
+      value: Community Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].sName
+      value: Bond Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iRent
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iRent1House
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iRent2House
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iRent3House
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iRent4House
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].sName
+      value: Liverpool Street Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].sName
+      value: Chance
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].sTileType
+      value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].sName
+      value: Park Lane
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].sTileType
+      value: Station.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[34].sName
+      value: Super Tax
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[34].sTileType
+      value: Station.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].sName
+      value: Mayfair
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].sTileType
+      value: Station.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[36].sName
+      value: 'TextScriptImporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[36].sTileType
+      value: Station.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[37].sName
+      value: '  userData: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[37].sTileType
+      value: Station.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[38].sName
+      value: '  assetBundleName: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[38].sTileType
+      value: Station.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[39].sName
+      value: '  assetBundleVariant: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[39].sTileType
+      value: Station.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[40].sName
+      value: Electric Company
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[40].sTileType
+      value: Utility
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[40].iRent2House
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[41].sName
+      value: Water Works
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[41].sTileType
+      value: Utility
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[41].iRent2House
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[42].sName
+      value: 'guid: e48fbedafb89cc74585d1dad8e32f622'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[42].sTileType
+      value: Utility.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[43].sName
+      value: 'timeCreated: 1490190200'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[43].sTileType
+      value: Utility.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[44].sName
+      value: 'licenseType: Free'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[44].sTileType
+      value: Utility.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[45].sName
+      value: 'TextScriptImporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[45].sTileType
+      value: Utility.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[46].sName
+      value: '  userData: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[46].sTileType
+      value: Utility.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[47].sName
+      value: '  assetBundleName: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[47].sTileType
+      value: Utility.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[48].sName
+      value: '  assetBundleVariant: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[48].sTileType
+      value: Utility.meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iRent
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iRent1House
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iRent3House
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iRent4House
+      value: 975
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iRent
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iRent1House
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iRent3House
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iRent4House
+      value: 975
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[0].iCost
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[0].sColour
+      value: Brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].eTileType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iRent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iRent1House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iRent2House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iRent3House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iRent4House
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iRentHotel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iMortgage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[1].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].iCost
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[2].sColour
+      value: Brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].eTileType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[3].iCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].eTileType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[4].iCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].iCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[5].sColour
+      value: Light Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[6].eTileType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].iCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[7].sColour
+      value: Light Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].iCost
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[8].sColour
+      value: Light Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].iCost
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[9].sColour
+      value: Pink
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].eTileType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iHouseCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iHotelCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[10].iCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].iCost
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[11].sColour
+      value: Pink
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].iCost
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[12].sColour
+      value: Pink
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].eTileType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[13].iCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].iCost
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[14].sColour
+      value: Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[15].eTileType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].iCost
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[16].sColour
+      value: Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iHouseCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iHotelCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].iCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[17].sColour
+      value: Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].iCost
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[18].sColour
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[19].eTileType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].iCost
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[20].sColour
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].iCost
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[21].sColour
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].eTileType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[22].iCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iRentHotel
+      value: 1150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iMortgage
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iHouseCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iHotelCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].iCost
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[23].sColour
+      value: Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iRentHotel
+      value: 1150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iMortgage
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iHouseCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iHotelCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].iCost
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[24].sColour
+      value: Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].eTileType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[25].iCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].iCost
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[26].sColour
+      value: Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].iCost
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[27].sColour
+      value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iRent
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iRent1House
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iRent2House
+      value: 390
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iRent3House
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iRent4House
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iRentHotel
+      value: 1275
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iMortgage
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iHouseCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iHotelCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].iCost
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[28].sColour
+      value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[29].eTileType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iRentHotel
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iMortgage
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iHouseCost
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iHotelCost
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].iCost
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[30].sColour
+      value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].eTileType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[31].iCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[32].eTileType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iRent
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iRent1House
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iRent2House
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iRent3House
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iRent4House
+      value: 1300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iRentHotel
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iMortgage
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iHouseCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iHotelCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].iCost
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[33].sColour
+      value: Dark Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[34].eTileType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[34].iCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iRent
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iRent1House
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iRent2House
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iRent3House
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iRent4House
+      value: 1700
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iRentHotel
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iMortgage
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iHouseCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iHotelCost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].iCost
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724784461257450, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c,
+        type: 2}
+      propertyPath: TilesProperties.Array.data[35].sColour
+      value: Dark Blue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f7e4dbd1ce5560844b93a0a2e80dfc8c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &925598275
 Prefab:
   m_ObjectHideFlags: 0
@@ -2466,6 +5108,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2543,7 +5195,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_Mesh
@@ -2687,6 +5339,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2781,6 +5443,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2842,7 +5514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d60e136a3319c4635bfe72bc71503ea3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: d60e136a3319c4635bfe72bc71503ea3, type: 2}
       propertyPath: mTrackableName
@@ -3023,6 +5695,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -3117,6 +5799,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -3392,6 +6084,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -3436,7 +6138,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1206677059}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3455,7 +6157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1209410580 stripped
 Transform:
@@ -3588,7 +6290,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_Mesh
@@ -3785,6 +6487,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -3879,6 +6591,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -3924,7 +6646,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_Mesh
@@ -4014,7 +6736,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_Mesh
@@ -4175,6 +6897,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -4268,6 +7000,16 @@ Prefab:
     - target: {fileID: 1998806595011828, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
@@ -4484,7 +7226,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.24879807, y: 0, z: 0.5}
+      m_Extent: {x: 0.24959151, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4536,7 +7278,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: ecc47ebe00000000000000bf000000000000803f000000000000000000000000ecc47ebe000000000000003f000000000000803f00000000000000000000803fecc47e3e00000000000000bf000000000000803f000000000000803f00000000ecc47e3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: eb947fbe00000000000000bf000000000000803f000000000000000000000000eb947fbe000000000000003f000000000000803f00000000000000000000803feb947f3e00000000000000bf000000000000803f000000000000803f00000000eb947f3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -4687,6 +7429,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -4763,7 +7515,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_Mesh
@@ -4928,6 +7680,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5031,6 +7793,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5125,6 +7897,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5226,7 +8008,7 @@ Canvas:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1683450337}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -5235,6 +8017,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -5251,7 +8034,7 @@ RectTransform:
   - {fileID: 57815730}
   - {fileID: 133421649}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5349,6 +8132,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5447,6 +8240,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5545,6 +8348,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5667,6 +8480,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5851,6 +8674,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -6067,6 +8900,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -6166,6 +9009,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -6281,6 +9134,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -6375,6 +9238,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: iGameBoardIndex
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055778883630830, guid: 7e6090d3f1f011d4b81ec0200bf1d142,
+        type: 2}
+      propertyPath: gTileScreenspacePrefab
+      value: 
+      objectReference: {fileID: 238964595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
