@@ -1,51 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GUITileScreenspace : MonoBehaviour
 {
-    public bool bScreenspaceTileHovered;
+    public bool bHighContrast = Settings.BalanceCounting;
+
+    private bool bHighContrastTrig;
     public bool bPhysicalTileHovered;
-    public Vector3 vPhysicalTilePos;
-    public float fAnimationSpeed = 1.0f;
-    public bool bHighContrast = false;
+    public bool bScreenspaceTileHovered;
 
-    private bool bHighContrastTrig = false;
-    public int iAnimationState = 0;
-    public float fAnimationPos = 0.0f;
-    RectTransform rTileRect;
-    Image iTileImage;
-    CanvasGroup cTileContent;
+    private readonly Color cBrown = new Color(0.615f, 0.388f, 0.003f);
+    private readonly Color cDarkBlue = new Color(0.078f, 0.278f, 0.721f);
+    private readonly Color cGreen = new Color(0.0f, 1.0f, 0.0f);
+    //private readonly Color cLightBlue = new Color(0.313f, 0.784f, 0.886f);
+    private readonly Color cLightBlue = new Color(0.6f, 0.96f, 0.98f);
+    private readonly Color cOrange = new Color(0.984f, 0.639f, 0.035f);
+    private readonly Color cPink = new Color(0.937f, 0.043f, 0.741f);
+    private readonly Color cRed = new Color(1.0f, 0.0f, 0.0f);
+    private readonly Color cStation = new Color(1.0f, 1.0f, 1.0f);
     public Color cTileColour;
+    private CanvasGroup cTileContent;
+    private readonly Color cUtility = new Color(1.0f, 1.0f, 1.0f);
+    private readonly Color cYellow = new Color(0.937f, 0.933f, 0.043f);
+    public float fAnimationPos;
+    public float fAnimationSpeed = 1.0f;
+    public int iAnimationState;
+    private Image iTileFooterBar;
+    private Image iTileImage;
 
-    Image iTileTitleBar;
-    Image iTileFooterBar;
-    Text tTileTitleText;
-    Text tTileTitleSubText;
+    private Image iTileTitleBar;
+    private RectTransform rTileRect;
+    private Text tColourSet;
+    private Text tHotel;
+    private Text tHotelCost;
+    private Text tHouse1;
+    private Text tHouse2;
+    private Text tHouse3;
+    private Text tHouse4;
+    private Text tHouseCost;
 
-    Text tRent;
-    Text tColourSet;
-    Text tHouse1;
-    Text tHouse2;
-    Text tHouse3;
-    Text tHouse4;
-    Text tHotel;
-    Text tHouseCost;
-    Text tHotelCost;
+    private Text tRent;
+    private Text tTileTitleSubText;
+    private Text tTileTitleText;
+    public Vector3 vPhysicalTilePos;
 
-    Color cBrown = new Color(0.615f, 0.388f, 0.003f);
-    Color cDarkBlue = new Color(0.078f, 0.278f, 0.721f);
-    Color cGreen = new Color(0.0f, 1.0f, 0.0f);
-    Color cLightBlue = new Color(0.313f, 0.784f, 0.886f);
-    Color cOrange = new Color(0.984f, 0.639f, 0.035f);
-    Color cPink = new Color(0.937f, 0.043f, 0.741f);
-    Color cRed = new Color(1.0f,0.0f,0.0f);
-    Color cStation = new Color(1.0f,1.0f,1.0f);
-    Color cUtility = new Color(1.0f, 1.0f, 1.0f);
-    Color cYellow = new Color(0.937f, 0.933f, 0.043f);
-
-    public void StartTile(int Index)
+    public void StartTile(int index)
     {
         rTileRect = GetComponent<RectTransform>();
         iTileImage = GetComponent<Image>();
@@ -72,8 +71,8 @@ public class GUITileScreenspace : MonoBehaviour
         tHotelCost = transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>();
 
         //Populate me
-        MonopolyBoardData boarddata = GameObject.Find("MonopolyTileGUI").GetComponent<MonopolyBoardData>();
-        MonopolyBoardData.TileProperties thistile = boarddata.TilesProperties[Index];
+        var boarddata = GameObject.Find("MonopolyTileGUI").GetComponent<MonopolyBoardData>();
+        var thistile = boarddata.TilesProperties[index];
 
         tTileTitleText.text = thistile.sName;
         tTileTitleSubText.text = "(" + thistile.sColour + ")";
@@ -86,8 +85,8 @@ public class GUITileScreenspace : MonoBehaviour
         tHouse4.text = thistile.iRent4House.ToString();
         tHotel.text = thistile.iRentHotel.ToString();
 
-        tHouseCost.text = "House\n" + thistile.iHouseCost.ToString();
-        tHotelCost.text = "Hotel\n" + thistile.iHotelCost.ToString();
+        tHouseCost.text = "House\n" + thistile.iHouseCost;
+        tHotelCost.text = "Hotel\n" + thistile.iHotelCost;
 
         switch (thistile.eTileType)
         {
@@ -100,7 +99,7 @@ public class GUITileScreenspace : MonoBehaviour
                     case "Red":
                         iTileTitleBar.color = cRed;
                         break;
-                    case "LightBlue":
+                    case "Light Blue":
                         iTileTitleBar.color = cLightBlue;
                         break;
                     case "DarkBlue":
@@ -130,45 +129,30 @@ public class GUITileScreenspace : MonoBehaviour
                 iTileTitleBar.color = cStation;
                 break;
         }
-
-        
     }
 
     private void Update()
     {
         AnimateFrame();
 
-        if (bHighContrast != bHighContrastTrig)
+        if (Settings.ColourCorrection)
         {
-            bHighContrastTrig = bHighContrast;
             ContrastModeToggled();
         }
     }
 
     private void ContrastModeToggled()
     {
-        if (bHighContrast)
-        {
-            iTileFooterBar.color = Color.white;
-            iTileTitleBar.color = Color.black;
-            tTileTitleText.color = Color.white;
-            tTileTitleSubText.color = Color.white;
-        }
-        else
-        {
-            iTileFooterBar.color = new Color32(210, 210, 210, 255);
-            iTileTitleBar.color = cTileColour;
-            tTileTitleText.color = Color.black;
-            tTileTitleSubText.color = Color.black;
-        }
+        iTileFooterBar.color = Color.white;
+        iTileTitleBar.color = Color.black;
+        tTileTitleText.color = Color.white;
+        tTileTitleSubText.color = Color.white;
     }
 
     private void AnimateFrame()
     {
         if (iTileImage == null)
-        {
             return;
-        }
 
 
         if (bPhysicalTileHovered || bScreenspaceTileHovered)
@@ -178,7 +162,7 @@ public class GUITileScreenspace : MonoBehaviour
 
         if (iAnimationState == 0)
         {
-            iTileImage.color = new Color(1.0f,1.0f,1.0f, Mathf.Lerp(0.0f, 1.0f, fAnimationPos));
+            iTileImage.color = new Color(1.0f, 1.0f, 1.0f, Mathf.Lerp(0.0f, 1.0f, fAnimationPos));
 
             if (fAnimationPos > 1.0f)
             {
@@ -186,7 +170,9 @@ public class GUITileScreenspace : MonoBehaviour
                 fAnimationPos = 0.0f;
             }
             else if (fAnimationPos < 0.0f)
+            {
                 fAnimationPos = 0.0f;
+            }
         }
         else if (iAnimationState == 1)
         {

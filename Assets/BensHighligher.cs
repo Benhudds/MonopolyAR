@@ -15,29 +15,35 @@ public class BensHighligher : MonoBehaviour
     void Start ()
     {
         CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
-        
-        if (Settings.GazeTracking)
+
+        if (Settings.TileInformation)
         {
-            gHighlighter = new GazeHighlighter(lPhysicsMask);
-        }
-        else
-        {
-            tHighlighter = new TouchHighlighter(lPhysicsMask);
+            if (Settings.GazeTracking)
+            {
+                gHighlighter = new GazeHighlighter(lPhysicsMask);
+            }
+            else
+            {
+                tHighlighter = new TouchHighlighter(lPhysicsMask);
+            }
         }
     }
 	
 	// Update is called once per frame
-	void Update ()
-	{
-	    if (Settings.GazeTracking)
-	    {
-	        gHighlighter.GazeTracking(transform);
-	    }
-	    else
-	    {
-            tHighlighter.TouchTracking(transform);
+    void Update()
+    {
+        if (Settings.TileInformation)
+        {
+            if (Settings.GazeTracking)
+            {
+                gHighlighter.GazeTracking(transform);
+            }
+            else
+            {
+                tHighlighter.TouchTracking(transform);
+            }
         }
-	}
+    }
 
-    
+
 }
