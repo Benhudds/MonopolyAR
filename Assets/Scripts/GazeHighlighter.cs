@@ -11,7 +11,7 @@ namespace Assets.Scripts
         public LayerMask lPhysicsMask;
         private readonly List<Renderer> tHighlighted = new List<Renderer>();
         private readonly List<GUITilePhysical> tPhyTiles = new List<GUITilePhysical>();
-        private const float timer = 9;
+        private const float timer = 4;
         private float timeLeft = timer;
         private int hitId;
 

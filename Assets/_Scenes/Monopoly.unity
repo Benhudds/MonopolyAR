@@ -463,6 +463,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -597,7 +601,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: tenMaterial
+  m_Name: twentyMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -758,6 +762,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1010,6 +1018,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1051,6 +1063,10 @@ Prefab:
     - target: {fileID: 400000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
@@ -1161,6 +1177,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1265,6 +1285,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1449,6 +1473,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1558,6 +1586,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1662,6 +1694,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -1781,6 +1817,10 @@ Prefab:
         type: 2}
       propertyPath: iGameBoardIndex
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
@@ -1976,6 +2016,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2172,6 +2216,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2345,6 +2393,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -2605,6 +2657,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5118,6 +5174,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5143,7 +5203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 932413213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -160, y: 0, z: -160}
+  m_LocalPosition: {x: -160, y: 0, z: -120}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1845310701}
@@ -5349,6 +5409,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5453,6 +5517,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5705,6 +5773,10 @@ Prefab:
       propertyPath: iGameBoardIndex
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5809,6 +5881,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -5834,7 +5910,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1141497320}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 160, y: 0, z: -160}
+  m_LocalPosition: {x: 120, y: 0, z: -160}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1100614265}
@@ -6094,6 +6170,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -6381,7 +6461,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1356980836}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 160, y: 0, z: 160}
+  m_LocalPosition: {x: 120, y: 0, z: 160}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1243554049}
@@ -6497,6 +6577,10 @@ Prefab:
       propertyPath: iGameBoardIndex
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -6601,6 +6685,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -6907,6 +6995,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -7010,6 +7102,10 @@ Prefab:
         type: 2}
       propertyPath: iGameBoardIndex
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
@@ -7226,7 +7322,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.24959151, y: 0, z: 0.5}
+      m_Extent: {x: 0.26065573, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -7278,7 +7374,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: eb947fbe00000000000000bf000000000000803f000000000000000000000000eb947fbe000000000000003f000000000000803f00000000000000000000803feb947f3e00000000000000bf000000000000803f000000000000803f00000000eb947f3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: ab7485be00000000000000bf000000000000803f000000000000000000000000ab7485be000000000000003f000000000000803f00000000000000000000803fab74853e00000000000000bf000000000000803f000000000000803f00000000ab74853e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -7439,6 +7535,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -7690,6 +7790,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -7803,6 +7907,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -7907,6 +8015,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -8142,6 +8254,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -8250,6 +8366,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -8358,6 +8478,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -8490,6 +8614,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -8536,7 +8664,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860601574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160, y: 0, z: -160}
+  m_LocalPosition: {x: 160, y: 0, z: -120}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 645087950}
@@ -8684,6 +8812,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -8910,6 +9042,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -9019,6 +9155,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -9144,6 +9284,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0
@@ -9248,6 +9392,10 @@ Prefab:
       propertyPath: gTileScreenspacePrefab
       value: 
       objectReference: {fileID: 238964595}
+    - target: {fileID: 4485502379028276, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6090d3f1f011d4b81ec0200bf1d142, type: 2}
   m_IsPrefabParent: 0

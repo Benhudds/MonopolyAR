@@ -58,8 +58,6 @@
      <Compile Include="Assets\MonopolyTileGUI\GUITilePhysical.cs" />
      <Compile Include="Assets\MonopolyTileGUI\GUITileScreenspace.cs" />
      <Compile Include="Assets\MonopolyTileGUI\MonopolyBoardData.cs" />
-     <Compile Include="Assets\MonopolyTileGUI\MonopolyTile.cs" />
-     <Compile Include="Assets\MonopolyTileGUI\MonopolyTileGUI.cs" />
      <Compile Include="Assets\RemoveBtn.cs" />
      <Compile Include="Assets\Script.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />

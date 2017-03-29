@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GUITilePhysical : MonoBehaviour
 {
+    private bool bHovered = false;
     public int iGameBoardIndex = 0;
     public GameObject gTileScreenspacePrefab;
     private GameObject gTileScreenspace;
@@ -14,13 +15,21 @@ public class GUITilePhysical : MonoBehaviour
         gTileScreenspace.GetComponent<GUITileScreenspace>().StartTile(iGameBoardIndex);
     }
 
+    private void FixedUpdate()
+    {
+        if (bHovered)
+        gTileScreenspace.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+    }
+
     public void OnMouseEnter()
     {
         gTileScreenspace.GetComponent<GUITileScreenspace>().OnMouseEnterPhysicalTile();
+        bHovered = true;
     }
 
     public void OnMouseExit()
     {
         gTileScreenspace.GetComponent<GUITileScreenspace>().OnMouseExitPhysicalTile();
+        bHovered = false;
     }
 }

@@ -75,10 +75,9 @@ public class GUITileScreenspace : MonoBehaviour
         var thistile = boarddata.TilesProperties[index];
 
         tTileTitleText.text = thistile.sName;
-        tTileTitleSubText.text = "(" + thistile.sColour + ")";
 
-        tRent.text = thistile.iRent.ToString();
-        tColourSet.text = (thistile.iRent * 2).ToString();
+        tRent.text = thistile.iCost.ToString();
+        tColourSet.text = (thistile.iRent).ToString();
         tHouse1.text = thistile.iRent1House.ToString();
         tHouse2.text = thistile.iRent2House.ToString();
         tHouse3.text = thistile.iRent3House.ToString();
@@ -88,9 +87,18 @@ public class GUITileScreenspace : MonoBehaviour
         tHouseCost.text = "House\n" + thistile.iHouseCost;
         tHotelCost.text = "Hotel\n" + thistile.iHotelCost;
 
+        iTileTitleBar.color = cStation;
         switch (thistile.eTileType)
         {
             case MonopolyBoardData.TileType.Property:
+                tTileTitleSubText.text = "(" + thistile.sColour + ")";
+                transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
                 switch (thistile.sColour)
                 {
                     case "Brown":
@@ -117,16 +125,60 @@ public class GUITileScreenspace : MonoBehaviour
                     case "Yellow":
                         iTileTitleBar.color = cYellow;
                         break;
-                    default:
-                        iTileTitleBar.color = cStation;
-                        break;
                 }
                 break;
+            case MonopolyBoardData.TileType.CommunityChest:
+                tTileTitleSubText.text = "";
+                transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                break;
+            case MonopolyBoardData.TileType.Chance:
+                tTileTitleSubText.text = "";
+                transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                break;
+            case MonopolyBoardData.TileType.RailwayStation:
+                tTileTitleSubText.text = "(RailwayStation)";
+                iTileTitleBar.color = cStation;
+                transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                break;
             case MonopolyBoardData.TileType.Utility:
+                tTileTitleSubText.text = "(Utility)";
+                transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(6).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
                 iTileTitleBar.color = cUtility;
                 break;
-            default:
-                iTileTitleBar.color = cStation;
+            case MonopolyBoardData.TileType.IncomeTax:
+            case MonopolyBoardData.TileType.SuperTax:
+                tTileTitleSubText.text = "";
+                transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(7).gameObject.SetActive(true);
                 break;
         }
     }
