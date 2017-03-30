@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.CodeDom.Compiler;
+using System.Net.Configuration;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GUITileScreenspace : MonoBehaviour
@@ -44,6 +46,8 @@ public class GUITileScreenspace : MonoBehaviour
     private Text tTileTitleText;
     public Vector3 vPhysicalTilePos;
 
+    private MonopolyBoardData.TileProperties prop;
+
     public void StartTile(int index)
     {
         rTileRect = GetComponent<RectTransform>();
@@ -73,6 +77,7 @@ public class GUITileScreenspace : MonoBehaviour
         //Populate me
         var boarddata = GameObject.Find("MonopolyTileGUI").GetComponent<MonopolyBoardData>();
         var thistile = boarddata.TilesProperties[index];
+        prop = thistile;
 
         tTileTitleText.text = thistile.sName;
 
@@ -99,6 +104,7 @@ public class GUITileScreenspace : MonoBehaviour
                 transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(8).gameObject.SetActive(false);
                 switch (thistile.sColour)
                 {
                     case "Brown":
@@ -136,6 +142,7 @@ public class GUITileScreenspace : MonoBehaviour
                 transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(8).gameObject.SetActive(false);
                 break;
             case MonopolyBoardData.TileType.Chance:
                 tTileTitleSubText.text = "";
@@ -146,6 +153,7 @@ public class GUITileScreenspace : MonoBehaviour
                 transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(8).gameObject.SetActive(false);
                 break;
             case MonopolyBoardData.TileType.RailwayStation:
                 tTileTitleSubText.text = "(RailwayStation)";
@@ -157,6 +165,7 @@ public class GUITileScreenspace : MonoBehaviour
                 transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
                 transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(8).gameObject.SetActive(false);
                 break;
             case MonopolyBoardData.TileType.Utility:
                 tTileTitleSubText.text = "(Utility)";
@@ -167,10 +176,10 @@ public class GUITileScreenspace : MonoBehaviour
                 transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(6).gameObject.SetActive(true);
                 transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(8).gameObject.SetActive(false);
                 iTileTitleBar.color = cUtility;
                 break;
             case MonopolyBoardData.TileType.IncomeTax:
-            case MonopolyBoardData.TileType.SuperTax:
                 tTileTitleSubText.text = "";
                 transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
@@ -179,6 +188,51 @@ public class GUITileScreenspace : MonoBehaviour
                 transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(7).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(8).gameObject.SetActive(false);
+                break;
+            case MonopolyBoardData.TileType.SuperTax:
+                tTileTitleSubText.text = "";
+                transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(7).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(8).gameObject.SetActive(true);
+                break;
+        }
+    }
+
+    private void TileTTSM()
+    {
+        switch (prop.eTileType)
+        {
+            case MonopolyBoardData.TileType.Property:
+                int tempUnmortgage = prop.iMortgage + (prop.iMortgage / 10);
+                Settings.TTSM.Speak(prop.sName + ", " + prop.sColour + ", Cost " + prop.iCost + ", Mortgage " + prop.iMortgage + ", UnMortgage " + tempUnmortgage +
+                    ", Rent " + prop.iRent + ", Rent with one house" + prop.iRent1House + ", Rent with two house" + prop.iRent2House + ", Rent with three house" + prop.iRent3House + 
+                    ", Rent with four houses" + prop.iRent4House + ", Rent with hotel " + ", Cost for each house " + prop.iHouseCost + ", Cost for each hotel " + prop.iHotelCost);
+                break;
+            case MonopolyBoardData.TileType.CommunityChest:
+                Settings.TTSM.Speak("Community Chest");
+                break;
+            case MonopolyBoardData.TileType.Chance:
+                Settings.TTSM.Speak("Chance Card");
+                break;
+            case MonopolyBoardData.TileType.RailwayStation:
+                Settings.TTSM.Speak(prop.sName + ", Cost 200" + ", Mortgage 100" + ", Unmortgage 110" + 
+                    ", Rent with one owned 25" + ", Rent with two owned 50" + ", Rent with three owned 100" + ", Rent with four owned 200");
+                break;
+            case MonopolyBoardData.TileType.Utility:
+                Settings.TTSM.Speak(prop.sName + ", Cost 150" + ", Mortgage 75" + ", Unmortgage 83" + 
+                    ", If one utility is owned, rent is 4 times amount on dice" + ", If both utility is owned, rent is 10 times amount on dice");
+                break;
+            case MonopolyBoardData.TileType.IncomeTax:
+                Settings.TTSM.Speak("Pay 200");
+                break;
+            case MonopolyBoardData.TileType.SuperTax:
+                Settings.TTSM.Speak("Pay 150");
                 break;
         }
     }
@@ -201,6 +255,17 @@ public class GUITileScreenspace : MonoBehaviour
         tTileTitleSubText.color = Color.white;
     }
 
+    private void OnTileShown()
+    {
+        TileTTSM();
+    }
+
+    private void OnTileHidden()
+    {
+        //Not implemented
+        Settings.TTSM.Speak("");
+    }
+
     private void AnimateFrame()
     {
         if (iTileImage == null)
@@ -219,6 +284,7 @@ public class GUITileScreenspace : MonoBehaviour
             if (fAnimationPos > 1.0f)
             {
                 iAnimationState++;
+                OnTileShown();
                 fAnimationPos = 0.0f;
             }
             else if (fAnimationPos < 0.0f)
@@ -239,6 +305,7 @@ public class GUITileScreenspace : MonoBehaviour
             {
                 fAnimationPos = 1.0f;
                 iAnimationState--;
+                OnTileHidden();
             }
         }
         else if (iAnimationState == 2)

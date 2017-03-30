@@ -42,10 +42,14 @@ public class RemoveBtn : MonoBehaviour {
                 break;
         }
 
+        Settings.TTSM.Speak(val.ToString());
+
         int currentVal = Int32.Parse(textObject.text.Substring(8));
 
         currentVal -= val;
 
         textObject.text = "Balance: " + currentVal;
+
+        Settings.TTSM.Speak("Current balance is " + currentVal);
     }
 }

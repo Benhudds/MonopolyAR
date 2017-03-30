@@ -36,7 +36,7 @@ public class Settings : MonoBehaviour
     public void SetColourCorrection()
     {
         Settings.ColourCorrection = !Settings.ColourCorrection;
-        TTSM.Speak("colour correction " + (ColourCorrection ? "enabled" : "disabled"));
+        TTSM.Speak("high contrast " + (ColourCorrection ? "enabled" : "disabled"));
     }
     public void SetBalanceCounting()
     {
