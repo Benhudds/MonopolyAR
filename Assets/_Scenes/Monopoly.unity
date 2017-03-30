@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 57815732}
   - component: {fileID: 57815731}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BalanceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,14 +207,14 @@ RectTransform:
   m_GameObject: {fileID: 57815729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1683450341}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5, y: -35}
+  m_AnchoredPosition: {x: 5, y: -60}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &57815731
@@ -601,7 +601,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: onehundredMaterial
+  m_Name: fiveMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2427,7 +2427,7 @@ RectTransform:
   m_GameObject: {fileID: 748157120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1943047995}
   m_Father: {fileID: 133421649}
@@ -2435,7 +2435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 40, y: 20}
+  m_AnchoredPosition: {x: 80, y: 35}
   m_SizeDelta: {x: 70, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &748157122
@@ -7166,7 +7166,7 @@ RectTransform:
   m_GameObject: {fileID: 1474985458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1250703467}
   m_Father: {fileID: 133421649}
@@ -7174,7 +7174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -40, y: 20}
+  m_AnchoredPosition: {x: -80, y: 35}
   m_SizeDelta: {x: 70, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1474985460
@@ -7322,7 +7322,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.24879807, y: 0, z: 0.5}
+      m_Extent: {x: 0.24679486, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -7374,7 +7374,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: ecc47ebe00000000000000bf000000000000803f000000000000000000000000ecc47ebe000000000000003f000000000000803f00000000000000000000803fecc47e3e00000000000000bf000000000000803f000000000000803f00000000ecc47e3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: cbb77cbe00000000000000bf000000000000803f000000000000000000000000cbb77cbe000000000000003f000000000000803f00000000000000000000803fcbb77c3e00000000000000bf000000000000803f000000000000803f00000000cbb77c3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
